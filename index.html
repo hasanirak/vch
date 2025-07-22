@@ -5,377 +5,251 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السيرة الذاتية - حسين يعقوب البلحاوي</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap');
-        
         :root {
-            --primary: #9c5333;
-            --secondary: #520056;
-            --accent: #e55039;
-            --light: #f5f6fa;
-            --dark: #2f3640;
-            --text: #353b48;
-            --shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            --radius: 16px;
+            --primary-color: #6c1e4e;
+            --secondary-color: #9c5333;
+            --light-color: #f8f1e9;
+            --dark-color: #333;
+            --white: #fff;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
         }
         
         body {
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.8;
-            color: var(--text);
-            background-color: var(--light);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px;
         }
         
-        /* Header */
-        .cv-header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 60px 40px;
+        .org-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 25px;
             text-align: center;
-            margin-bottom: 40px;
-            border-radius: var(--radius);
-            position: relative;
-            overflow: hidden;
+            border-radius: 10px 10px 0 0;
+            margin-bottom: 20px;
         }
         
-        .cv-header::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
-            opacity: 0.3;
+        .org-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
         }
         
-        .cv-header-content {
-            position: relative;
-            z-index: 2;
+        .org-header p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
         
-        .cv-header h1 {
-            font-size: 2.8rem;
+        .org-goals {
+            background-color: rgba(156, 83, 51, 0.1);
+            padding: 15px;
+            border-right: 4px solid var(--secondary-color);
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .org-goals h3 {
+            color: var(--primary-color);
             margin-bottom: 10px;
-            font-weight: 700;
         }
         
-        .cv-header p {
-            font-size: 1.3rem;
+        .org-goals ul {
+            list-style-type: none;
+        }
+        
+        .org-goals li {
+            position: relative;
+            padding-right: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .org-goals li:before {
+            content: "•";
+            color: var(--secondary-color);
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+        }
+        
+        .org-vision {
+            background-color: rgba(108, 30, 78, 0.1);
+            padding: 15px;
+            border-right: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .org-vision h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
             opacity: 0.9;
         }
         
-        /* Main Content */
-        .cv-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-        }
-        
-        @media (max-width: 768px) {
-            .cv-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* Sections */
-        .cv-section {
-            background: white;
-            border-radius: var(--radius);
+        .main-content {
+            background-color: var(--white);
             padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
             margin-bottom: 30px;
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
         }
         
-        .cv-section::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-        }
-        
-        .cv-section h2 {
-            color: var(--primary);
-            font-size: 1.8rem;
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-        
-        .cv-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            right: 0;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(to right, var(--secondary), var(--accent));
-        }
-        
-        .cv-section h3 {
-            color: var(--secondary);
             font-size: 1.4rem;
-            margin: 20px 0 10px;
         }
         
-        /* Personal Info */
         .info-item {
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
         
-        .info-item h4 {
-            color: var(--primary);
-            font-size: 0.95rem;
+        .info-item h3 {
+            color: var(--secondary-color);
             margin-bottom: 5px;
-            font-weight: 600;
-        }
-        
-        .info-item p {
             font-size: 1.1rem;
         }
         
-        /* Skills */
-        .skill {
-            margin-bottom: 18px;
+        .info-item p, .info-item ul {
+            margin-right: 15px;
         }
         
-        .skill-name {
-            font-weight: 600;
+        ul {
+            list-style-position: inside;
+        }
+        
+        ul li {
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            color: var(--dark);
         }
         
-        .skill-name::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: var(--accent);
-            margin-left: 10px;
-            border-radius: 50%;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background: rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(90deg, var(--secondary), var(--primary));
-            border-radius: 4px;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-right: 30px;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            right: 10px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 30px;
-            padding-right: 30px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            right: -30px;
-            top: 8px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background: white;
-            border: 3px solid var(--accent);
-            z-index: 2;
-        }
-        
-        .timeline-date {
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 5px;
-            font-size: 1.05rem;
-        }
-        
-        /* Vision Section */
-        .vision-section {
-            background: rgba(156, 83, 51, 0.05);
-            border-right: 4px solid var(--primary);
-            padding: 25px;
-            border-radius: var(--radius);
+        .vision-box {
+            background-color: rgba(156, 83, 51, 0.1);
+            border-right: 4px solid var(--secondary-color);
+            padding: 15px;
+            border-radius: 5px;
             margin-top: 20px;
         }
         
-        .vision-section h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
+        .vision-box p {
+            font-style: italic;
+            color: var(--primary-color);
         }
         
-        .vision-section h3::before {
-            content: '📌';
-            margin-left: 10px;
-        }
-        
-        /* Footer */
         footer {
             text-align: center;
-            padding: 40px 0;
-            margin-top: 60px;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            color: var(--text);
-            font-size: 1rem;
+            margin-top: 30px;
+            padding: 20px;
+            color: var(--dark-color);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
-        <header class="cv-header">
-            <div class="cv-header-content">
-                <h1>حسين يعقوب حسين كاظم البلحاوي</h1>
-                <p>موظف مدني | باحث ماجستير في إدارة الأعمال والذكاء الاصطناعي</p>
-            </div>
+        <div class="org-header">
+            <h2>تجمع عون الشبابي</h2>
+            <p>تجمع وطني تطوعي مستقل، يضم نخبة من الشباب الواعي والطموح، يعمل على دعم المبادرات المجتمعية، وتمكين الطاقات الفردية، وتعزيز الوعي الوطني والمسؤولية المدنية.</p>
+        </div>
+        
+        <div class="org-goals">
+            <h3>أهدافنا العامة:</h3>
+            <ul>
+                <li>تعزيز روح الانتماء والعمل الجماعي</li>
+                <li>دعم الكفاءات الشابة وتنميتها</li>
+                <li>الإسهام في بناء مجتمع واعٍ ومسؤول</li>
+                <li>نشر ثقافة الالتزام والتطوع المجتمعي</li>
+                <li>بناء شبكات تواصل فعالة بين الشباب</li>
+            </ul>
+        </div>
+        
+        <div class="org-vision">
+            <h3>رؤيتنا:</h3>
+            <p>أن يكون شباب العراق قوة بناء وتغيير فاعل في محيطه، بعيدًا عن الفوضى أو التبعية، ومسترشدًا بقيم النزاهة والانضباط والعمل المنتج.</p>
+        </div>
+        
+        <header>
+            <h1>حسين يعقوب حسين كاظم البلحاوي</h1>
+            <p>موظف مدني | باحث ماجستير في إدارة الأعمال والذكاء الاصطناعي | ناشط مجتمعي</p>
         </header>
         
-        <!-- Main Content -->
-        <div class="cv-grid">
-            <!-- Left Column -->
-            <div class="left-col">
-                <!-- Personal Info -->
-                <div class="cv-section">
-                    <h2>المعلومات الشخصية</h2>
-                    <div class="info-item">
-                        <h4>الميلاد</h4>
-                        <p>1995 - بغداد، العراق</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>الحالة الوظيفية</h4>
-                        <p>موظف مدني (ضمن الأوائل على العراق)</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>الدرجة العلمية</h4>
-                        <p>طالب ماجستير - مرحلة البحث</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>التخصص</h4>
-                        <p>إدارة الأعمال والذكاء الاصطناعي</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>النشاط المجتمعي</h4>
-                        <p>منذ عام 2013</p>
-                    </div>
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">المعلومات الشخصية</h2>
+                <div class="info-item">
+                    <p><strong>الميلاد:</strong> بغداد - 1995</p>
                 </div>
-                
-                <!-- Skills -->
-                <div class="cv-section">
-                    <h2>المهارات</h2>
-                    <div class="skill">
-                        <div class="skill-name">إدارة الفرق</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">التنظيم المجتمعي</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">التخطيط الاستراتيجي</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill">
-                        <div class="skill-name">إدارة المشاريع</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
-                    </div>
+                <div class="info-item">
+                    <p><strong>الوظيفة:</strong> موظف مدني مُعين ضمن الأوائل على العراق عبر مجلس الخدمة الاتحادي</p>
+                </div>
+                <div class="info-item">
+                    <p><strong>الدراسة:</strong> طالب ماجستير - مرحلة البحث في تخصص إدارة الأعمال والذكاء الاصطناعي</p>
                 </div>
             </div>
             
-            <!-- Right Column -->
-            <div class="right-col">
-                <!-- About -->
-                <div class="cv-section">
-                    <h2>الملف الشخصي</h2>
-                    <p>ناشط مجتمعي منذ عام 2013 في العمل الجماهيري والتنظيمي، أمتلك خبرة واسعة في إدارة فرق العمل وتنظيم المبادرات الميدانية. قمت بتنظيم وإدارة العديد من الحملات التثقيفية المجتمعية والحملات الخدمية التطوعية التي تهدف إلى تمكين الشباب وتعزيز المسؤولية المجتمعية.</p>
-                    
-                    <div class="vision-section">
-                        <h3>رؤيتي الشخصية</h3>
-                        <p>أؤمن بأن بناء الإنسان هو الطريق لبناء الوطن، وأن التغيير يبدأ من وعي الشباب بدورهم كمواطنين فاعلين ومسؤولين، بعيدًا عن الفوضى والصراعات. الفساد يبدأ من المواطن الذي يبيع ذمته مقابل حفنة دنانير زهيدة.</p>
-                    </div>
+            <div class="section">
+                <h2 class="section-title">الخبرات والنشاطات</h2>
+                <div class="info-item">
+                    <h3>النشاط المجتمعي والتنظيمي</h3>
+                    <ul>
+                        <li>نشط منذ عام 2013 في العمل الجماهيري والتنظيمي</li>
+                        <li>خبرة واسعة في إدارة فرق العمل وتنظيم المبادرات الميدانية</li>
+                        <li>عمل ضمن حملات تثقيف مجتمعي وتنظيم حملات خدمية تطوعية</li>
+                    </ul>
                 </div>
-                
-                <!-- Experience -->
-                <div class="cv-section">
-                    <h2>الخبرة العملية</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2013 - حتى الآن</div>
-                            <h3>ناشط ومُنظم مجتمعي</h3>
-                            <p>تنظيم المبادرات المجتمعية والحملات التطوعية، إدارة فرق العمل، التخطيط للأنشطة والفعاليات المجتمعية. ساهمت في تنظيم أكثر من 20 فعالية ومبادرة مجتمعية ناجحة.</p>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date"></div>
-                            <h3>موظف مدني</h3>
-                            <p>تم تعييني ضمن الأوائل على العراق عبر مجلس الخدمة الاتحادي، حيث أسعى إلى تطبيق مبادئ النزاهة والكفاءة في عملي الرسمي.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Education -->
-                <div class="cv-section">
-                    <h2>التعليم</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date"></div>
-                            <h3>ماجستير في إدارة الأعمال والذكاء الاصطناعي</h3>
-                            <p>مرحلة البحث - أطمح إلى تطبيق ما أتعلمه في تطوير آليات العمل المجتمعي والتنظيمي.</p>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            
+            <div class="vision-box">
+                <h3>رؤيته الشخصية:</h3>
+                <p>يؤمن بأن بناء الإنسان هو الطريق لبناء الوطن، وأن التغيير يبدأ من وعي الشباب بدورهم كمواطنين فاعلين ومسؤولين، بعيدًا عن الفوضى والصراعات وان الفساد يبدأ من المواطن الذي يبيع ذمته مقابل حفنة دنانير زهيدة.</p>
             </div>
         </div>
         
         <footer>
-            <p>© 2023 السيرة الذاتية لـ حسين يعقوب البلحاوي | جميع الحقوق محفوظة</p>
+            <p>© 2023 السيرة الذاتية - جميع الحقوق محفوظة</p>
         </footer>
     </div>
 </body>
